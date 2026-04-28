@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('camp_benefits', function (Blueprint $table) {
             $table->id();
-            $table->integer('camp_id');
+            $table->bigInteger('camp_id')->unsigned();
+            $table->foreign('camp_id')->references('id')->on('camps');
             $table->string('name');
             $table->timestamps();
             $table->softDeletes();

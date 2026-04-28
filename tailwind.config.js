@@ -6,6 +6,7 @@ module.exports = {
     './resources/js/**/*.js',           // semua JS di resources/js
     './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php', // pagination Laravel
     './storage/framework/views/*.php',  // cached Blade
+     './resources/**/*.vue',
   ],
 
     safelist: [
@@ -20,6 +21,7 @@ module.exports = {
       fontFamily: {
         // font custom 'Instrument Sans' + fallback
         sans: [
+          'Poppins',
           'Instrument Sans',
           'ui-sans-serif',
           'system-ui',
@@ -30,8 +32,15 @@ module.exports = {
           'Noto Color Emoji',
         ],
       },
+      screens: {
+        md2: '950px',
+      },
     },
+
   },
 
   plugins: [],
 }
+
+
+

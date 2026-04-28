@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
-            $table->integer('camp_id');
-            $table->integer('user_id');
+            $table->BigInteger('camp_id')->unsigned();
+            $table->foreign('camp_id')->references('id')->on('camps');
+            $table->BigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('card_number');
             $table->date('expired');
             $table->string('cvc');
