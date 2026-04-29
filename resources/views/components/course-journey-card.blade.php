@@ -5,8 +5,8 @@
     <img class="w-full h-auto rounded-tr-[100px] rounded-bl-[100px]" src="{{ asset('images/journey-'. $number .'png') }}" alt="">
 
     <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-10
-                bg-red-700 text-white w-16 h-16 rounded-full
-                border-[5px] border-white font-semibold text-[24px] flex items-center justify-center">
+                text-white w-16 h-16 rounded-full
+                border-[5px] border-white font-semibold text-[24px] flex items-center justify-center" style="background-color: {{ $numberColor }};">
         {{ $number }}
     </div>
 
@@ -20,11 +20,13 @@
   </div>
 
   <!-- TEXT SAMPING -->
-  <div class="w-1/2">
-    <h2 class="font-semibold text-lg">Judul</h2>
-    <p class="text-gray-500">
-      Ini adalah teks di sebelah kanan dari image. Bisa panjang bebas.
+  <div class="w-1/2 text-left">
+    <h2 class="font-semibold text-[16px] text-[#31B380]">{{ $categoryText }}</h2>
+    <h1 class="font-semibold text-[30px]">{{ $titleText }}</h1>
+    <p class="font-normal text-[16px] mt-[30px]">
+      {{ $descText }}
     </p>
+    <button class="mt-[30px] font-medium bg-[#7839F3]/10 text-[#7839F3] px-10 py-2 rounded-full">Showcase</button>
   </div>
 
 </div>

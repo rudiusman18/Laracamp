@@ -53,9 +53,11 @@
                 </div>
 
                 {{-- Course journey --}}
-                <x-course-journey-card number="1." title="Interview" text="Before taking any program it is good to choose the path" category-text="BETTER CAREER" title-text="Prepare The Journey" desc-text="We do really care to our students’ future career so it would be good if you are taking a quick interview"/>
-                <x-course-journey-card number="2." title="Focus" text="Study and follow the journey based on your career path" category-text="BETTER CAREER" title-text="Prepare The Journey" desc-text="We do really care to our students’ future career so it would be good if you are taking a quick interview"/>
-                <x-course-journey-card number="3." title="Final Gate" text="Demonstration for your final project to the judges" category-text="BETTER CAREER" title-text="Prepare The Journey" desc-text="We do really care to our students’ future career so it would be good if you are taking a quick interview"/>
+                <x-course-journey-card number="1." number-color="#F3BF39" title="Interview" text="Before taking any program it is good to choose the path" category-text="BETTER CAREER" title-text="Prepare The Journey" desc-text="We do really care to our students’ future career so it would be good if you are taking a quick interview"/>
+
+                <x-course-journey-card number="2." number-color="#7839F3" title="Focus" text="Study and follow the journey based on your career path" category-text="STUDY HARDER" title-text="Finish The Project" desc-text="Each of you will be joining the private group and also working together with team members on project"/>
+
+                <x-course-journey-card number="3." number-color="#31B380" title="Final Gate" text="Demonstration for your final project to the judges" category-text="END GAME" title-text="Big Demo Day" desc-text="Learn how to speaking in public to demonstrate your final project and receive the important feedbacks"/>
 
             </div>
 
