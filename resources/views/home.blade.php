@@ -93,7 +93,7 @@
                     <li>✔ Analytics</li>
                 </ul>
 
-                <a href="#"
+                <a href="/checkout"
                     class="mt-8 block text-center rounded-md px-4 py-2 text-indigo-600 ring-1 ring-indigo-200 hover:ring-indigo-300">
                     Get started
                 </a>
@@ -113,7 +113,7 @@
                     <li>✔ Advanced analytics</li>
                 </ul>
 
-                <a href="#"
+                <a href="/checkout"
                     class="mt-8 block text-center rounded-md bg-indigo-500 px-4 py-2 hover:bg-indigo-400">
                     Get started
                 </a>
