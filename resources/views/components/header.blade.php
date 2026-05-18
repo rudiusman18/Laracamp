@@ -1,105 +1,75 @@
-  <nav class="relative z-50 bg-transparent">
-    <div class="mx-auto px-20 ">
-      <div class="flex h-16 items-center justify-between">
-        <div class="flex items-center">
-          <div class="shrink-0">
-            <a href="/">
-                <img src={{ asset('images/logo.png') }} alt="Your Company" class="size-8 w-full" />
-            </a>
-          </div>
-          <div class="hidden md2:block">
-            <div class="ml-10 flex items-baseline space-x-4">
-              <!-- Current: "bg-gray-900 dark:bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <a href="/" aria-current="page" class="rounded-md px-3 py-2 text-sm font-medium {{ request()->is('/') ? 'text-purple-800' : 'text-black-300'}} hover:text-purple-800">Program</a>
-               <a href="/mentor" aria-current="page" class="rounded-md px-3 py-2 text-sm font-medium {{ request()->is('mentor') ? 'text-purple-800' : 'text-black-300'}} hover:text-purple-800">Mentor</a>
-                <a href="/pricing" aria-current="page" class="rounded-md px-3 py-2 text-sm font-medium {{ request()->is('pricing') ? 'text-purple-800' : 'text-black-300'}} hover:text-purple-800">Pricing</a>
-                 <a href="/business" aria-current="page" class="rounded-md px-3 py-2 text-sm font-medium {{ request()->is('business') ? 'text-purple-800' : 'text-black-300'}} hover:text-purple-800">Business</a>
-            </div>
-          </div>
+<nav x-data="{ open: false }" class="relative z-50 bg-transparent">
+  <div class="mx-auto px-20">
+    <div class="flex h-16 items-center justify-between">
+
+      <!-- LEFT -->
+      <div class="flex items-center">
+        <div class="shrink-0">
+          <a href="/">
+            <img src="{{ asset('images/logo.png') }}" class="size-8 w-full" />
+          </a>
         </div>
 
-        {{-- Kode ini digunakan membuat tombol sign in dan sign up --}}
-       <div class="hidden md2:flex ml-4 items-center md2:ml-6 space-x-2">
-    <button onclick="window.location.href='/sign-in'" class="rounded-full bg-purple-300/30 text-purple-800 text-sm font-medium px-5 py-2">Sign In</button>
-    <button class="rounded-full bg-purple-800 text-white text-sm font-medium px-5 py-2">Sign Up</button>
-</div>
-
-        {{-- Kode dibawah ini nanti akan digunakan setelah user melakukan login --}}
-        {{-- <div class="hidden md:block">
-          <div class="ml-4 flex items-center md:ml-6">
-            <button type="button" class="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">View notifications</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-                <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-
-            <!-- Profile dropdown -->
-            <el-dropdown class="relative ml-3">
-              <button class="relative flex max-w-xs items-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">Open user menu</span>
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-8 rounded-full outline outline-1 -outline-offset-1 outline-white/10" />
-              </button>
-
-              <el-menu anchor="bottom end" popover class="m-0 w-48 origin-top-right rounded-md bg-white p-0 py-1 shadow-lg outline outline-1 outline-black/5 transition [--anchor-gap:theme(spacing.2)] [transition-behavior:allow-discrete] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in">
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-none">Your profile</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-none">Settings</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-none">Sign out</a>
-              </el-menu>
-            </el-dropdown>
-
-
+        <!-- Desktop Menu -->
+        <div class="hidden md2:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="/" class="px-3 py-2 text-sm {{ request()->is('/') ? 'text-purple-800' : 'text-black'}}">Program</a>
+            <a href="/mentor" class="px-3 py-2 text-sm {{ request()->is('mentor') ? 'text-purple-800' : 'text-black'}}">Mentor</a>
+            <a href="/pricing" class="px-3 py-2 text-sm {{ request()->is('pricing') ? 'text-purple-800' : 'text-black'}}">Pricing</a>
+            <a href="/business" class="px-3 py-2 text-sm {{ request()->is('business') ? 'text-purple-800' : 'text-black'}}">Business</a>
           </div>
-        </div> --}}
-        <div class="-mr-2 flex md2:hidden">
-          <!-- Mobile menu button -->
-          <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 [[aria-expanded='true']_&]:hidden">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 [&:not([aria-expanded='true']_*)]:hidden">
-              <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
         </div>
       </div>
+
+      <!-- RIGHT -->
+      <div class="hidden md2:flex items-center space-x-2">
+        <button onclick="window.location.href='/sign-in'" class="rounded-full bg-purple-300/30 text-purple-800 px-5 py-2 text-sm">
+          Sign In
+        </button>
+        <button class="rounded-full bg-purple-800 text-white px-5 py-2 text-sm">
+          Sign Up
+        </button>
+      </div>
+
+      <!-- BURGER -->
+      <div class="md2:hidden">
+        <button @click="open = !open" class="p-2 text-gray-600">
+
+          <!-- icon hamburger -->
+          <svg x-show="!open" class="size-6" fill="none" stroke="currentColor">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+
+          <!-- icon close -->
+          <svg x-show="open" class="size-6" fill="none" stroke="currentColor">
+            <path d="M6 18 18 6M6 6l12 12" />
+          </svg>
+
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div x-show="open"
+       x-transition
+       @click.outside="open = false"
+       class="md2:hidden px-4 pb-4">
+
+    <a href="/" class="block py-2">Program</a>
+    <a href="/mentor" class="block py-2">Mentor</a>
+    <a href="/pricing" class="block py-2">Pricing</a>
+    <a href="/business" class="block py-2">Business</a>
+
+    <div class="mt-3 space-y-2">
+      <button class="w-full bg-purple-300/30 text-purple-800 py-2 rounded-full">
+        Sign In
+      </button>
+      <button class="w-full bg-purple-800 text-white py-2 rounded-full">
+        Sign Up
+      </button>
     </div>
 
-    <el-disclosure id="mobile-menu" hidden class="md:hidden [&:not([hidden])]:block">
-      <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-        <!-- Current: "bg-gray-900 dark:bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-        <a href="#" aria-current="page" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white dark:bg-gray-950/50">Dashboard</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Reports</a>
-      </div>
-      <div class="border-t border-white/10 pb-3 pt-4">
-        <div class="flex items-center px-5">
-          <div class="shrink-0">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-10 rounded-full outline outline-1 -outline-offset-1 outline-white/10" />
-          </div>
-          <div class="ml-3">
-            <div class="text-base/5 font-medium text-white">Tom Cook</div>
-            <div class="text-sm font-medium text-gray-400">tom@example.com</div>
-          </div>
-          <button type="button" class="relative ml-auto shrink-0 rounded-full p-1 text-gray-400 hover:text-white focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-            <span class="absolute -inset-1.5"></span>
-            <span class="sr-only">View notifications</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-              <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        <div class="mt-3 space-y-1 px-2">
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Your profile</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Settings</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Sign out</a>
-        </div>
-      </div>
-    </el-disclosure>
-  </nav>
+  </div>
+</nav>

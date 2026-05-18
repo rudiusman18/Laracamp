@@ -1,9 +1,7 @@
 import './bootstrap';
-import '../css/app.css';
-import '@tailwindplus/elements'
 
-import Alpine from 'alpinejs'
+import Alpine from 'alpinejs';
 
-window.Alpine = Alpine
+window.Alpine = Alpine;
 
-Alpine.start()
+Alpine.start();
